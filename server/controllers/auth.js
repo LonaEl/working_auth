@@ -73,7 +73,8 @@ export const forgotPassword = async (req, res, next) => {
     // HTML Message
     const message = `
       <h1>You have requested a password reset</h1>
-      <p>Please make a put request to the following link:</p>
+      <h4>If you did not request to reset your password, or you did it by mistake, simply ignore this email. Your old password will still work</h4>
+      <p>Click on the following link to reset your password:</p>
       <a href=${resetUrl} clicktracking=off>${resetUrl}</a>
     `;
 
@@ -84,7 +85,7 @@ export const forgotPassword = async (req, res, next) => {
         text: message,
       });
 
-      res.status(200).json({ success: true, data: "Email Sent" });
+      res.status(200).json({ success: true, data: "Email sent" });
     } catch (err) {
       console.log(err);
 

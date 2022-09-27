@@ -25,7 +25,7 @@ const RegisterScreen = ({ history }) => {
       setTimeout(() => {
         setError("");
       }, 5000);
-      return setError("Passwords do not match");
+      return setError("Passwords do not match, let's try again");
     }
 
     try {

@@ -15,9 +15,13 @@ app.get("/", (req, res, next) => {
   res.send("Api running");
 });
 
+import authRoute from "./routes/auth.js";
+import privateRoute from "./routes/private.js"
+
+
 // Connecting Routes
-app.use("/api/auth", require("./routes/auth"));
-app.use("/api/private", require("./routes/private"));
+app.use("/api/auth", authRoute);
+app.use("/api/private", privateRoute);
 
 // Error Handler Middleware
 app.use(errorHandler);

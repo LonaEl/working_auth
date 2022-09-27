@@ -1,12 +1,12 @@
 import ErrorResponse from "../utils/errorResponse.js";
 
-export const errorHandler = (err, req, res, next) => {
+const errorHandler = (err, req, res, next) => {
   let error = { ...err };
 
   error.message = err.message;
 
   if (err.code === 11000) {
-    const message = `Duplicate Field value entered`;
+    const message = `Email already exists, please login or use another email`;
     error = new ErrorResponse(message, 400);
   }
 
@@ -23,4 +23,4 @@ export const errorHandler = (err, req, res, next) => {
   });
 };
 
-//module.exports = errorHandler;
+export default errorHandler;

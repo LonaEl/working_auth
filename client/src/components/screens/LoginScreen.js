@@ -30,7 +30,8 @@ const LoginScreen = ({ history }) => {
         config
       );
 
-      localStorage.setItem("authToken", data.token);
+     /*  localStorage.setItem("authToken", data.token); */
+     localStorage.setItem("authToken", JSON.stringify(data.token) )
 
       history.push("/");
     } catch (error) {

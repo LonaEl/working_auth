@@ -78,7 +78,7 @@ const RegisterScreen = ({ history }) => {
             name="firstname"
             placeholder="Enter username"
             value={firstname}
-            onChange={(e) => setLastname(e.target.value)}
+            onChange={(e) => setFirstname(e.target.value)}
           />
 
           <label htmlFor="name">Username:</label>

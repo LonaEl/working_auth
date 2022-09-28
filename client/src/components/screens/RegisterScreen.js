@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./RegisterScreen.css";
 
 const RegisterScreen = ({ history }) => {
+  const [lastname, setLastname] = useState("");
+  const [firstname, setFirstname] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -56,6 +58,29 @@ const RegisterScreen = ({ history }) => {
         <h3 className="register-screen__title">Register</h3>
         {error && <span className="error-message">{error}</span>}
         <div className="form-group">
+
+        <label htmlFor="name">Last name:</label>
+          <input
+            type="text"
+            required
+            id="lastname"
+            name="lastname"
+            placeholder="Enter username"
+            value={lastname}
+            onChange={(e) => setLastname(e.target.value)}
+          />
+
+        <label htmlFor="name">First name:</label>
+          <input
+            type="text"
+            required
+            id="firstname"
+            name="firstname"
+            placeholder="Enter username"
+            value={firstname}
+            onChange={(e) => setLastname(e.target.value)}
+          />
+
           <label htmlFor="name">Username:</label>
           <input
             type="text"
@@ -65,6 +90,7 @@ const RegisterScreen = ({ history }) => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
+
         </div>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
